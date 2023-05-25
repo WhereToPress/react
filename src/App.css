@@ -8,24 +8,3 @@
   width: 1200px;
   margin: 0 auto;
 }
-
-.header {
-  grid-area: h;
-  background: green;
-}
-.header img {
-  width: 60px;
-}
-
-.nav {
-  grid-area: n;
-  background-color: burlywood;
-}
-
-.content {
-  grid-area: c;
-  background-color: cornflowerblue;
-}
-.content__ava_img {
-  width: 150px;
-}

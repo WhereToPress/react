@@ -1,0 +1,14 @@
+.content {
+  grid-area: c;
+  background-color: cornflowerblue;
+}
+.content__ava_img {
+  width: 150px;
+}
+
+.posts {
+  background: blue;
+}
+.item {
+  color: green;
+}
