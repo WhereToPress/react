@@ -3,7 +3,7 @@ import style from "./Profile.module.css";
 
 const Profile = () => {
   return (
-    <div className={style.content}>
+    <div>
       <div>
         <img
           src="https://images.freeimages.com/images/previews/ac9/railway-hdr-1361893.jpg"
