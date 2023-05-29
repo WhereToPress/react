@@ -7,12 +7,15 @@
     padding: 10px;
 }
 
-.dialogs__items .active {
-    font-weight: bold;
-}
 
-.dialog {
-    
+.dialogs__items .dialog {
+    color: black;
+    text-decoration: none;
+}
+.dialogs__items .active {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .messages {
@@ -20,5 +23,5 @@
 }
 
 .message {
-    
+    padding: 0px;
 }
