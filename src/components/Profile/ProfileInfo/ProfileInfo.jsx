@@ -4,7 +4,7 @@ const ProfileInfo = () => {
   return (
     <div>
       <div>
-        <img
+        <img className={style.main__img}
           src="https://blog.hubspot.com/hs-fs/hub/53/file-2421972586-png/00-Blog_Thinkstock_Images/social-content-data.png?width=595&height=400&name=social-content-data.png"
           alt="content-main-img"
         ></img>

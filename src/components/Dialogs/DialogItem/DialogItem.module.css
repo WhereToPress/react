@@ -1,0 +1,10 @@
+.dialog {
+    color: black;
+    text-decoration: none;
+}
+
+.active {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
