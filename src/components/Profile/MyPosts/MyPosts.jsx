@@ -3,14 +3,20 @@ import Post from "./Post/Post.jsx";
 
 const MyPosts = () => {
   return (
-    <div className={style.posts}>
-      My posts
+    <div className={style.postsBlock}>
+      <h3>My posts</h3>
       <div>
-        <textarea></textarea>
-        <button>Add new post</button>
+        <div>
+          <textarea></textarea>
+        </div>
+        <div>
+          <button>Add new post</button>
+        </div>
       </div>
-      <Post message="Hello, World!" likesCount="15"/>
-      <Post message="It's my first post" likesCount="20"/>
+      <div className={style.posts}>
+        <Post message="Hello, World!" likesCount="15" />
+        <Post message="It's my first post" likesCount="20" />
+      </div>
     </div>
   );
 };
