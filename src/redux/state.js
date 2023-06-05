@@ -14,6 +14,9 @@ let state = {
         ],
     },
     profilePage: {
+        profileData : [
+            {name: "Mak", id: 0, ava: "https://funkylife.in/wp-content/uploads/2023/03/good-morning-image-531.jpg"}
+        ],
         postData : [
             {id: 1, message: "Hello, World!", likesCount: 15},
             {id: 2, message: "It's my first post", likesCount: 20}

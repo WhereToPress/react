@@ -1,6 +1,6 @@
 import style from "./ProfileInfo.module.css";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
   return (
     <div>
       <div>
@@ -13,7 +13,7 @@ const ProfileInfo = () => {
         <img
           className={style.content__ava_img}
           src="https://funkylife.in/wp-content/uploads/2023/03/good-morning-image-531.jpg"
-          alt="personal_avatar"
+          alt="profile_avatar"
         ></img>
         ava + descriprion
       </div>
