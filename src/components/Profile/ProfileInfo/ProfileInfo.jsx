@@ -12,10 +12,10 @@ const ProfileInfo = (props) => {
       <div className={style.descriptionBlock}>
         <img
           className={style.content__ava_img}
-          src="https://funkylife.in/wp-content/uploads/2023/03/good-morning-image-531.jpg"
+          src={props.profileData.ava}
           alt="profile_avatar"
         ></img>
-        ava + descriprion
+         + descriprion
       </div>
     </div>
   );
