@@ -5,5 +5,7 @@
     margin: 0 0 10px 0;
 }
 .posts {
+    display: flex;
+    flex-direction: column-reverse;
     margin-top: 10px;
 }

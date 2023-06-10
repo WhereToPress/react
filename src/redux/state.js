@@ -14,21 +14,38 @@ let state = {
             {id: 2, message: "How are you?"},
             {id: 3, message: "Good, thanks!"},
         ],
+        newMessageText: "",
     },
     profilePage: {
         profileData : {id: 0, name: "Mak", ava: "https://funkylife.in/wp-content/uploads/2023/03/good-morning-image-531.jpg"},
 
         postData : [
-            {id: 1, message: "Hello, World!", likesCount: 15},
-            {id: 2, message: "It's my first post", likesCount: 20},
+            {id: 1, message: "It's my first post", likesCount: 20},
+            {id: 2, message: "Hello, World!", likesCount: 15},
         ],
+        newPostText: "",
     },
 };
 
-debugger
-export let addNewPost = (newPostMessage) => {
-    let newPost = {id: 3, message: newPostMessage, likesCount: 0};
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+export let addNewPost = () => {
+    let newPost = {id: 3, message: state.profilePage.newPostText, likesCount: 100};
     state.profilePage.postData.push(newPost);
+    updateNewPostText("");
+    rerenderEntireTree(state);
+};
+
+export let updateNewMessageText = (currentText) => {
+    state.dialogPage.newMessageText = currentText;
+    rerenderEntireTree(state);
+}
+export let addNewMessage = () => {
+    let newMessage = {id: 4, message: state.dialogPage.newMessageText};
+    state.dialogPage.messageData.push(newMessage);
+    updateNewMessageText("")
     rerenderEntireTree(state);
 };
 
