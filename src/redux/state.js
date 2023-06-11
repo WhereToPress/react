@@ -1,4 +1,8 @@
-import { rerenderEntireTree } from "../rerender"
+let rerender = () => {
+    // пустая функция необходимая для callback вызова полезной rerenderEntireTree определенной в index.js
+    // внутри функции subscribe происходит подмена rerender на observer
+    // который в свою очередь вызыается в index.js получив в параметрах полезную rerenderEntireTree
+}
 
 let state = {
     dialogPage: {
@@ -27,26 +31,32 @@ let state = {
     },
 };
 
-export let updateNewPostText = (newText) => {
+window.state = state
+
+export const updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
-    rerenderEntireTree(state);
+    rerender(state);
 }
-export let addNewPost = () => {
+export const addNewPost = () => {
     let newPost = {id: 3, message: state.profilePage.newPostText, likesCount: 100};
     state.profilePage.postData.push(newPost);
     updateNewPostText("");
-    rerenderEntireTree(state);
+    rerender(state);
 };
 
-export let updateNewMessageText = (currentText) => {
+export const updateNewMessageText = (currentText) => {
     state.dialogPage.newMessageText = currentText;
-    rerenderEntireTree(state);
+    rerender(state);
 }
-export let addNewMessage = () => {
+export const addNewMessage = () => {
     let newMessage = {id: 4, message: state.dialogPage.newMessageText};
     state.dialogPage.messageData.push(newMessage);
     updateNewMessageText("")
-    rerenderEntireTree(state);
+    rerender(state);
 };
+
+export const subscribe = (observer) => {
+    rerender = observer;
+}
 
 export default state;
