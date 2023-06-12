@@ -4,12 +4,14 @@ const Post = (props) => {
   return (
     <div className={style.item}>
       <img
-        src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"
+        src="https://funkylife.in/wp-content/uploads/2023/03/good-morning-image-531.jpg"
         alt="profile_avatar"
       ></img>
-      <div>{props.message}</div>
       <div>
-        <span>like: {props.likesCount}</span>
+        <div>{props.message}</div>
+        <div>
+          <span>like: {props.likesCount}</span>
+        </div>
       </div>
     </div>
   );
