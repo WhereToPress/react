@@ -1,3 +1,8 @@
+const ADD_NEW_POST = "ADD-NEW-POST";
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const ADD_NEW_MESSAGE = "ADD-NEW-MESSAGE";
+const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
+
 let store = {
   _state: {
     dialogPage: {
@@ -80,6 +85,11 @@ let store = {
     }
   },
 };
+
+export const addNewPostActionCreator = () => ({type: ADD_NEW_POST});
+export const updateNewPostTextActionCreator = (newText) => ({type: UPDATE_NEW_POST_TEXT, currentText: newText});
+export const addNewMessageActionCreator = () => ({type: ADD_NEW_MESSAGE});
+export const updateNewMessageTextActionCreator = (newText) => ({type: UPDATE_NEW_MESSAGE_TEXT, currentText: newText});
 
 export default store;
 window.store = store;
