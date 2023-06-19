@@ -1,7 +1,5 @@
-const ADD_NEW_POST = "ADD-NEW-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-const ADD_NEW_MESSAGE = "ADD-NEW-MESSAGE";
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
+import profileReducer from "./profile_reducer";
+import dialogsReducer from "./dialogs_reducer";
 
 let store = {
   _state: {
@@ -66,30 +64,28 @@ let store = {
     return this._state;
   },
   dispatch(action) {
-    if (action.type === "UPDATE-NEW-POST-TEXT") {
-      this._state.profilePage.newPostText = action.currentText;
-      this._callSubscriber(this._state);
-    } else if (action.type === "ADD-NEW-POST") {
-      let newPost = {id: 3, message: this._state.profilePage.newPostText, likesCount: 100};
-      this._state.profilePage.postData.push(newPost);
-      this._state.profilePage.newPostText = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
-      this._state.dialogPage.newMessageText = action.currentText;
-      this._callSubscriber(this._state);
-    } else if (action.type === "ADD-NEW-MESSAGE") {
-      let newMessage = {id: 4, message: this._state.dialogPage.newMessageText};
-      this._state.dialogPage.messageData.push(newMessage);
-      this._state.dialogPage.newMessageText = "";
-      this._callSubscriber(this._state);
-    }
+    this._state.profilePage = profileReducer (action, this._state.profilePage)
+    this._state.dialogPage = dialogsReducer (action, this._state.dialogPage)
+    // if (action.type === "UPDATE-NEW-POST-TEXT") {
+    //   this._state.profilePage.newPostText = action.currentText;
+    //   this._callSubscriber(this._state);
+    // } else if (action.type === "ADD-NEW-POST") {
+    //   let newPost = {id: 3, message: this._state.profilePage.newPostText, likesCount: 100};
+    //   this._state.profilePage.postData.push(newPost);
+    //   this._state.profilePage.newPostText = "";
+    //   this._callSubscriber(this._state);
+    // } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
+    //   this._state.dialogPage.newMessageText = action.currentText;
+    //   this._callSubscriber(this._state);
+    // } else if (action.type === "ADD-NEW-MESSAGE") {
+    //   let newMessage = {id: 4, message: this._state.dialogPage.newMessageText};
+    //   this._state.dialogPage.messageData.push(newMessage);
+    //   this._state.dialogPage.newMessageText = "";
+    this._callSubscriber(this._state);
+    // }
   },
 };
 
-export const addNewPostActionCreator = () => ({type: ADD_NEW_POST});
-export const updateNewPostTextActionCreator = (newText) => ({type: UPDATE_NEW_POST_TEXT, currentText: newText});
-export const addNewMessageActionCreator = () => ({type: ADD_NEW_MESSAGE});
-export const updateNewMessageTextActionCreator = (newText) => ({type: UPDATE_NEW_MESSAGE_TEXT, currentText: newText});
 
 export default store;
 window.store = store;
