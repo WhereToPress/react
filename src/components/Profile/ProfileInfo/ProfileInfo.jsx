@@ -12,7 +12,7 @@ const ProfileInfo = (props) => {
       <div className={style.descriptionBlock}>
         <img
           className={style.content__ava_img}
-          src={props.store.getState().profilePage.profileData.ava}
+          src="https://funkylife.in/wp-content/uploads/2023/03/good-morning-image-531.jpg"
           alt="profile_avatar"
         ></img>
          + descriprion
