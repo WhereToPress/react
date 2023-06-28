@@ -12,7 +12,7 @@ const ProfileInfo = (props) => {
       <div className={style.descriptionBlock}>
         <img
           className={style.content__ava_img}
-          src={props.profileData.ava}
+          src={props.store.getState().profilePage.profileData.ava}
           alt="profile_avatar"
         ></img>
          + descriprion
