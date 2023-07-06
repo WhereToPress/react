@@ -19,6 +19,9 @@ const Navbar = () => {
       <div>
         <NavLink to="/settings" className = { selectLink => selectLink.isActive ? style.active : style.item }>Settings</NavLink>
       </div>
+      <div>
+        <NavLink to="/users" className = { selectLink => selectLink.isActive ? style.active : style.item }>Users</NavLink>
+      </div>
     </nav>
   );
 };
