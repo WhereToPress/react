@@ -1,3 +1,17 @@
 .photo {
     width: 40px 
 }
+
+.active {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.usersPages :hover {
+    cursor: pointer;
+}
+
+.usersPages span {
+    margin-right: 5px;
+}
